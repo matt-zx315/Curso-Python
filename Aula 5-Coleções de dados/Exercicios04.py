@@ -679,3 +679,6 @@ else:
 
 for l in lista:
     print(l)
+
+# LISTA 02
+# Exercício 1:
