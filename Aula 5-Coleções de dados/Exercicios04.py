@@ -1,6 +1,7 @@
-# import math
-# import random
-# import statistics
+import math
+import random
+import statistics
+
 #
 # # LISTA 1:
 # # Exercício 1: Criar um vetor que armazene 6 valores.
@@ -652,33 +653,112 @@
 #     numeros.sort()
 #
 # print(numeros)
+#
+# # Exercício 39: Ler um número natural N e imprimir o triângulo de Pascal.
+# lista = []
+#
+# linhas = int(input("Digite um número natural. "))
+#
+# if linhas <= 0:
+#     print("Encerrando...")
+# else:
+#     lista = [[1], [1, 1]]
+#     for i in range(1, linhas):
+#         linha = [1]
+#         print(i)
+#
+#         for j in range(0, len(lista[i]) - 1):
+#             print(j)
+#             print(f"{lista[i][j]} + {lista[i][j + 1]}")
+#             linha += [lista[i][j] + lista[i][j + 1]]
+#             print(linha)
+#
+#         linha += [1]
+#         lista += [linha]
+#         print(f"Linha {i + 1} => {linha}")
+#         print(lista)
+#
+# for lin in lista:
+#     print(lin)
+#
+# # LISTA 02
+# # Exercício 1: Ler uma matriz 4 x 4, contar e escrever quantos números maiores que 10 ela possui.
+# matriz = [[], [], [], []]
+# maior_10 = 0
+#
+# for i in range(0, 4):
+#     for j in range(0, 4):
+#         numero = random.randint(0, 100)
+#         matriz[i].append(numero)
+#
+# for i in range(0, 4):
+#     for j in range(0, 4):
+#         if matriz[i][j] > 10:
+#             maior_10 += 1
+#
+# print(f"Na matriz 4 x 4 há {maior_10} valores maiores que 10.")
+#
+# # Exercício 2: Fazer uma matriz 5 x 5, preencher a diagonal principal com 1 e o restante com 0.
+# matriz = [[], [], [], [], []]
+#
+# for i in range(0, 5):
+#     for j in range(0, 5):
+#         if i == j:
+#             matriz[i].append(1)
+#         else:
+#             matriz[i].append(0)
+#
+# for m in matriz:
+#     print(m)
+#
+# # Exercício 3: Preencher uma matriz 4 x 4 com o produto do valor de linha e coluna.
+# matriz = [[], [], [], []]
+#
+# for i in range(0, 4):
+#     for j in range(0, 4):
+#         matriz[i].append(i * j)
+#
+# for m in matriz:
+#     print(m)
+#
+# # Exercício 4: Ler uma matriz 4 x 4, imprimir e retornar a posição do maior valor.
+# matriz = [[], [], [], []]
+# valores = {}
+# posicao = None
+#
+# for i in range(0, 4):
+#     for j in range(0, 4):
+#         numero = random.randint(0, 100)
+#         matriz[i].append(numero)
+#
+# for m in matriz:
+#     print(m)
+#
+# for linha in range(0, len(matriz)):
+#     lin, col = linha, 0
+#
+#     for coluna in range(0, len(matriz[linha])):
+#         col = coluna
+#         posicao = (lin, col)
+#         valores[matriz[linha][coluna]] = posicao
+#
+#
+# print(f"O valor máximo da matriz ({max(valores.keys())}) 4 x 4 está na posição {valores[max(valores.keys())]}.")
 
-# Exercício 39: Ler um número natural N e imprimir o triângulo de Pascal.
-lista = []
+# Exercício 5: Ler uma matriz 5 x 5 e um valor X. Procurar X e retornar uma mensagem se o valor foi encontrado ou não.
+matriz = [[], [], [], [], []]
+X = int(input("Digite um número: "))
+encontrado = False
 
-linhas = int(input("Digite um número natural. "))
+for lin in range(0, 5):
+    for col in range(0, 5):
+        numero = random.randint(0, 100)
+        matriz[lin].append(numero)
 
-if linhas <= 0:
-    print("Encerrando...")
-else:
-    lista = [[1], [1, 1]]
-    for i in range(1, linhas):
-        linha = [1]
-        print(i)
-
-        for j in range(0, len(lista[i]) - 1):
-            print(j)
-            print(f"{lista[i][j]} + {lista[i][j + 1]}")
-            linha += [lista[i][j] + lista[i][j + 1]]
-            print(linha)
-
-        linha += [1]
-        lista += [linha]
-        print(f"Linha {i + 1} => {linha}")
-        print(lista)
-
-for l in lista:
-    print(l)
-
-# LISTA 02
-# Exercício 1:
+for lin in matriz:
+    print(matriz[matriz.index(lin)])
+    if X in matriz[matriz.index(lin)]:
+        print(f"O valor {X} foi encontrado.")
+        break
+    elif X not in matriz and matriz.index(lin) == len(matriz) - 1:
+        print(f"O valor {X} não foi encontrado.")
