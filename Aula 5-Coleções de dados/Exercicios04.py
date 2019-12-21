@@ -1,3 +1,4 @@
+import collections
 import math
 import random
 import statistics
@@ -744,21 +745,215 @@ import statistics
 #
 #
 # print(f"O valor máximo da matriz ({max(valores.keys())}) 4 x 4 está na posição {valores[max(valores.keys())]}.")
+#
+# # Exercício 5: Ler uma matriz 5 x 5 e um valor X. Procurar X e retornar uma mensagem se o valor foi encontrado ou não.
+# matriz = [[], [], [], [], []]
+# X = int(input("Digite um número: "))
+# encontrado = False
+#
+# for lin in range(0, 5):
+#     for col in range(0, 5):
+#         numero = random.randint(0, 100)
+#         matriz[lin].append(numero)
+#
+# for lin in matriz:
+#     print(matriz[matriz.index(lin)])
+#     if X in matriz[matriz.index(lin)]:
+#         print(f"O valor {X} foi encontrado.")
+#         break
+#     elif X not in matriz and matriz.index(lin) == len(matriz) - 1:
+#         print(f"O valor {X} não foi encontrado.")
+#
+# # Exercício 6: Ler uma matriz 4 x 4 e escrever uma terceira com os maiores valores de cada matriz lida.
+# matriz = [[], [], [], []]
+# maiores_valores = []
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, 4):
+#         numero = random.randint(0, 100)
+#         matriz[lin].append(numero)
+#
+# for m in matriz:
+#     print(m)
+#
+# for lin in range(0, len(matriz)):
+#     maiores_valores.append(max(matriz[lin]))
+#
+# print(maiores_valores)
+#
+# # Exercício 7: Imprimir uma matriz 10 x 10. Para i sendo a linha e j sendo a coluna, atribuir:
+# # Se i < j: A[i][j] = 2i + 7j
+# # Se i = j: A[i][j] = 3i² - i
+# # Se i > j: A[i][j] = 4i³ + 5j²
+# matriz = []
+#
+# for i in range(0, 10):
+#     matriz.append([])
+#
+#     for j in range(0, 10):
+#         if i < j:
+#             matriz[i].append((2 * i) + (7 * j))
+#         elif i == j:
+#             matriz[i].append((3 * (i ** 2)) - i)
+#         else:
+#             matriz[i].append((4 * (i ** 3)) + (5 * (j ** 2)))
+#
+# for m in matriz:
+#     print(m)
+#
+# # Exercício 8: Ler uma matriz 3 x 3 e calcular a soma dos elementos acima da diagonal principal.
+# matriz = [[], [], []]
+# soma = 0
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, 3):
+#         numero = random.randint(0, 10)
+#         matriz[lin].append(numero)
+#
+# for m in matriz:
+#     print(m)
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, len(matriz[lin])):
+#         if col > lin:
+#             soma += matriz[lin][col]
+#
+# print(f"A soma dos valores acima da diagonal principal é {soma}.")
+#
+# # Exercício 9: Ler uma matriz 3 x 3 e calcular a soma dos elementos abaixo da diagonal principal.
+# matriz = [[], [], []]
+# soma = 0
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, 3):
+#         numero = random.randint(0, 10)
+#         matriz[lin].append(numero)
+#
+# for m in matriz:
+#     print(m)
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, len(matriz[lin])):
+#         if col < lin:
+#             soma += matriz[lin][col]
+#
+# print(f"A soma dos valores abaixo da diagonal principal é {soma}.")
+#
+# # Exercício 10: Ler uma matriz 3 x 3 e calcular a soma dos elementos da diagonal principal.
+# matriz = [[], [], []]
+# soma = 0
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, 3):
+#         numero = random.randint(0, 10)
+#         matriz[lin].append(numero)
+#
+# for m in matriz:
+#     print(m)
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, len(matriz[lin])):
+#         if col == lin:
+#             soma += matriz[lin][col]
+#
+# print(f"A soma dos valores da diagonal principal é {soma}.")
+#
+# # Exercício 11: Ler uma matriz 3 x 3 e calcular a soma dos elementos da diagonal secundária.
+# matriz = [[], [], []]
+# soma = 0
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, 3):
+#         numero = random.randint(0, 10)
+#         matriz[lin].append(numero)
+#
+# for m in matriz:
+#     print(m)
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, len(matriz[lin])):
+#         if lin + col == len(matriz) - 1:
+#             soma += matriz[lin][col]
+#
+#
+# print(f"A soma dos valores da diagonal secundária é {soma}.")
+#
+# # Exercício 12: Ler uma matriz e gerar sua transposta.
+# matriz = [[], [], []]
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, 3):
+#         numero = random.randint(0, 10)
+#         matriz[lin].append(numero)
+#
+# for m in matriz:
+#     print(m)
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, len(matriz[lin])):
+#         if col > lin:
+#             aux = matriz[col][lin]
+#             matriz[col][lin] = matriz[lin][col]
+#             matriz[lin][col] = aux
+#
+# print()
+#
+# for m in matriz:
+#     print(m)
+#
+# # Exercício 13: Em uma matriz 4 x 4, com valores de 1 a 20, transformar em uma matriz triangular inferior.
+# matriz = [[], [], [], []]
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, 4):
+#         numero = random.randint(0, 20)
+#         matriz[lin].append(numero)
+#
+# for m in matriz:
+#     print(m)
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, len(matriz[lin])):
+#         if col > lin:
+#             matriz[lin][col] = 0
+#
+# for m in matriz:
+#     print(m)
+#
+# Exercício 14: Gerar uma cartela de bingo de 5 x 5 com valores de 0 a 99.
+# matriz = [[], [], [], [], []]
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, 5):
+#         numero = random.randint(0, 99)
+#         if numero < 10:
+#             matriz[lin].append("0" + str(numero))
+#         else:
+#             matriz[lin].append(str(numero))
+#
+# for m in matriz:
+#     print(m)
+#
+# # Exercício 15: Ler uma matriz 5 x 10 contendo respostas de perguntas de múltipla escolha e comparar com um gabarito.
+alunos = {"João": [], "Maria": [], "Carlos": [], "Marcos": [], "Raul": []}
+gabarito = []
 
-# Exercício 5: Ler uma matriz 5 x 5 e um valor X. Procurar X e retornar uma mensagem se o valor foi encontrado ou não.
-matriz = [[], [], [], [], []]
-X = int(input("Digite um número: "))
-encontrado = False
+for aluno in alunos:
+    while len(alunos[aluno]) < 10:
+        alternativa = random.choice('abcd')
+        alunos[aluno].append(alternativa)
 
-for lin in range(0, 5):
-    for col in range(0, 5):
-        numero = random.randint(0, 100)
-        matriz[lin].append(numero)
+while len(gabarito) < 10:
+    alternativa = random.choice('abcd')
+    gabarito.append(alternativa)
 
-for lin in matriz:
-    print(matriz[matriz.index(lin)])
-    if X in matriz[matriz.index(lin)]:
-        print(f"O valor {X} foi encontrado.")
-        break
-    elif X not in matriz and matriz.index(lin) == len(matriz) - 1:
-        print(f"O valor {X} não foi encontrado.")
+for aluno, respostas in alunos.items():
+    acertos = 0
+    print(f"Aluno: {aluno}, Respostas: {alunos[aluno]}")
+    print(f"Gabarito: {gabarito}")
+
+    for questao in range(0, len(gabarito)):
+        if alunos[aluno][questao] == gabarito[questao]:
+            acertos += 1
+
+    print(f"{aluno} acertou {acertos} questões!\n")
