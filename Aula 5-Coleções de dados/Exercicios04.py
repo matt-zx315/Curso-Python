@@ -935,25 +935,323 @@ import statistics
 #     print(m)
 #
 # # Exercício 15: Ler uma matriz 5 x 10 contendo respostas de perguntas de múltipla escolha e comparar com um gabarito.
-alunos = {"João": [], "Maria": [], "Carlos": [], "Marcos": [], "Raul": []}
-gabarito = []
-
-for aluno in alunos:
-    while len(alunos[aluno]) < 10:
-        alternativa = random.choice('abcd')
-        alunos[aluno].append(alternativa)
-
-while len(gabarito) < 10:
-    alternativa = random.choice('abcd')
-    gabarito.append(alternativa)
-
-for aluno, respostas in alunos.items():
-    acertos = 0
-    print(f"Aluno: {aluno}, Respostas: {alunos[aluno]}")
-    print(f"Gabarito: {gabarito}")
-
-    for questao in range(0, len(gabarito)):
-        if alunos[aluno][questao] == gabarito[questao]:
-            acertos += 1
-
-    print(f"{aluno} acertou {acertos} questões!\n")
+# alunos = {"João": [], "Maria": [], "Carlos": [], "Marcos": [], "Raul": []}
+# gabarito = []
+#
+# for aluno in alunos:
+#     while len(alunos[aluno]) < 10:
+#         alternativa = random.choice('abcd')
+#         alunos[aluno].append(alternativa)
+#
+# while len(gabarito) < 10:
+#     alternativa = random.choice('abcd')
+#     gabarito.append(alternativa)
+#
+# for aluno, respostas in alunos.items():
+#     acertos = 0
+#     print(f"Aluno: {aluno}, Respostas: {alunos[aluno]}")
+#     print(f"Gabarito: {gabarito}")
+#
+#     for questao in range(0, len(gabarito)):
+#         if alunos[aluno][questao] == gabarito[questao]:
+#             acertos += 1
+#
+#     print(f"{aluno} acertou {acertos} questões!\n")
+#
+# # Exercício 16: Repetição do ex. 15. Os alunos são identificados por números inteiros e devem ter pontuação mínima de 7.
+# alunos = {1: [], 2: [], 3: []}
+# gabarito = []
+#
+# for aluno in alunos:
+#     while len(alunos[aluno]) < 10:
+#         alternativa = random.choice('abcd')
+#         alunos[aluno].append(alternativa)
+#
+# while len(gabarito) < 10:
+#     alternativa = random.choice('abcd')
+#     gabarito.append(alternativa)
+#
+# for aluno, respostas in alunos.items():
+#     acertos = 0
+#     print(f"Aluno: {aluno}, Respostas: {alunos[aluno]}")
+#     print(f"Gabarito: {gabarito}")
+#
+#     for questao in range(0, len(gabarito)):
+#         if alunos[aluno][questao] == gabarito[questao]:
+#             acertos += 1
+#
+#     if acertos >= 7:
+#         print(f"Aluno {aluno} acertou {acertos} questões. Resultado: aprovado.")
+#     else:
+#         print(f"Aluno {aluno} acertou {acertos} questões. Resultado: reprovado.")
+#
+#     print()
+#
+# # Exercício 17: Ler 3 notas de provas de 10 alunos e listar quais alunos tiveram como pior nota 1, 2 e 3.
+# notas = {"João": [], "Maria": [], "Carlos": [], "Marcos": [], "Raul": [],
+#          "Silvana": [], "Gabriela": [], "Rodrigo": [], "Fábio": [], "Beatriz": []}
+# piores_notas = {}
+#
+# for aluno in notas:
+#     for n in range(0, 3):
+#         nota = random.randint(0, 10)
+#         notas[aluno].append(nota)
+#
+# for aluno in notas:
+#     print(f"Aluno: {aluno} -> Nota: {notas[aluno]}")
+#
+# for aluno in notas:
+#     if 1 <= min(notas[aluno]) <= 3:
+#         piores_notas[aluno] = min(notas[aluno])
+#
+# for aluno in piores_notas:
+#     print(f"Aluno: {aluno} -> Pior nota: {piores_notas[aluno]}.")
+#
+# # Exercício 18: A partir de uma matriz 3 x 3, criar um vetor que seja a soma das colunas dessa matriz.
+# matriz = [[], [], []]
+# somas = []
+#
+# for lin in range(0, len(matriz)):
+#     for col in range(0, len(matriz)):
+#         numero = random.randint(0, 20)
+#         matriz[lin].append(numero)
+#
+# for m in matriz:
+#     print(m)
+#
+# for lin in range(len(matriz)):
+#     somas.append(0)
+#     for col in range(len(matriz)):
+#         somas[lin] += matriz[col][lin]
+#
+# print(f"\nO vetor da soma das colunas da matriz é {somas}.")
+#
+# # Exercício 19: Ler uma matriz 5 x 4 com nomes de alunos, notas de provas, trabalhos e média final.
+# avaliacoes = [[1], [2], [3], [4], [5]]
+#
+# for aluno in avaliacoes:
+#     nota_trabalhos = random.randint(0, 10)
+#     nota_provas = random.randint(0, 10)
+#     aluno.append(nota_provas)
+#     aluno.append(nota_trabalhos)
+#
+# # item a: exibir as três primeira informações de cada aluno.
+# for aluno in avaliacoes:
+#     print(f"Número da matrícula: {aluno[0]}")
+#
+#     for item in range(1, len(aluno)):
+#         if item == 1:
+#             print(f"Nota das provas: {aluno[item]}")
+#         else:
+#             print(f"Nota das trabalho: {aluno[item]}")
+#
+#
+# # item b: calcular a nota final como sendo a média das notas de provas e trabalhos.
+# for aluno in avaliacoes:
+#     nota_final = (aluno[1] + aluno[2]) / 2
+#     aluno.append(nota_final)
+#
+# for aluno in avaliacoes:
+#     print(aluno)
+#
+# # item c: imprimir o número de matrícula do aluno com a maior nota final.
+# maior_nota = 0
+# matricula = None
+# for aluno in avaliacoes:
+#     if aluno[3] > maior_nota:
+#         maior_nota = aluno[3]
+#         matricula = aluno[0]
+#
+# print(f"O número de matrícula do aluno com a maior nota é {matricula}.")
+#
+# # item d: imprimir a média aritmética das notas finais.
+# soma = 0
+# for aluno in avaliacoes:
+#     soma += aluno[3]
+#
+# print(f"A média dos alunos foi de {soma / len(avaliacoes)}.")
+#
+# # Exercício 20: Ler uma matriz 3 x 6 com valores reais.
+# matriz = []
+#
+# for lin in range(0, 3):
+#     matriz.append([])
+#
+#     for col in range(0, 6):
+#         numero = round(random.uniform(0.0, 50.0), 2)
+#         matriz[lin].append(numero)
+#
+# for m in matriz:
+#     print(m)
+#
+# # item a: Imprimir a soma dos elementos das colunas ímpares.
+# soma_colunas_impares = 0
+# for lin in matriz:
+#     for col in range(0, len(lin)):
+#         if col % 2 == 1:
+#             soma_colunas_impares += round(lin[col], 2)
+#
+# print(f"A soma dos valores das colunas ímpares da matriz é {soma_colunas_impares}.")
+#
+# # item b: Imprimir a média aritimética dos valores na segunda e quarta coluna (colunas 1 e 3).
+# soma = 0
+# denominador = 0
+#
+# for lin in matriz:
+#     for col in range(0, len(lin)):
+#         if col == 1 or col == 3:
+#             soma += lin[col]
+#             denominador += 1
+#
+# print(f"A média aritimética dos valores da segunda e quarta colunas é {round(soma / denominador, 2)}.")
+#
+# # item c: Substituir os valores da sexta coluna pela soma dos valores das duas primeiras.
+# for lin in matriz:
+#     for col in range(0, 2):
+#         soma += lin[col]
+#
+# for i in range(0, len(matriz)):
+#     matriz[i][5] = round(soma, 2)
+#
+# # item d: Imprimir a matriz modificada.
+# for m in matriz:
+#     print(m)
+#
+# # Exercício 21: Ler 2 matrizes 2 x 2 e apresentar ao usuário as opções: somar, subtrair,adicionar constantes e imprimir.
+#
+# matriz_A = []
+# matriz_B = []
+#
+# for lin in range(2):
+#     matriz_A.append([])
+#     matriz_B.append([])
+#
+#     for col in range(2):
+#         a = random.randint(0, 20)
+#         b = random.randint(0, 20)
+#         matriz_A[lin].append(a)
+#         matriz_B[lin].append(b)
+#
+# opcao = input("Selecione uma das opções:\n"
+#               "a - Somar matrizes geradas.\n"
+#               "b - Subtrair matriz A da matriz B.\n"
+#               "c - Adicionar uma constante às duas matrizes.\n"
+#               "d - Imprimir as matrizes.\n").lower()
+#
+# if opcao == 'a':
+#     soma_matrizes = []
+#
+#     for lin in range(2):
+#         soma_matrizes.append([])
+#
+#         for col in range(2):
+#             soma_matrizes[lin].append(matriz_A[lin][col] + matriz_B[lin][col])
+#
+#     for lin in soma_matrizes:
+#         print(lin)
+#
+# elif opcao == 'b':
+#     diferenca_matrizes = []
+#
+#     for lin in range(2):
+#         diferenca_matrizes.append([])
+#
+#         for col in range(2):
+#             diferenca_matrizes[lin].append(matriz_A[lin][col] - matriz_B[lin][col])
+#
+#     for lin in diferenca_matrizes:
+#         print(lin)
+#
+# elif opcao == 'c':
+#     for lin in range(2):
+#         constante = random.randint(0, 20)
+#         matriz_A[lin].append(constante)
+#         matriz_B[lin].append(constante)
+#
+#     for lin in matriz_A:
+#         print(lin)
+#
+#     print()
+#
+#     for lin in matriz_B:
+#         print(lin)
+#
+# elif opcao == 'd':
+#     for lin in matriz_A:
+#         print(lin)
+#
+#     print()
+#
+#     for lin in matriz_B:
+#         print(lin)
+#
+# # Exercício 22: Ler duas matrizes A e B, ambas 3 x 3, e imprimir a matriz C = A x B (UUUUUGGGGGHHHHH)
+# A, B = [], []
+#
+# for lin in range(3):
+#     A.append([])
+#     B.append([])
+#
+#     for col in range(3):
+#         a = random.randint(0, 9)
+#         b = random.randint(0, 9)
+#         A[lin].append(a)
+#         B[lin].append(b)
+#
+# for a in range(3):
+#     print(A[a])
+#
+# print()
+#
+# for b in range(3):
+#     print(B[b])
+#
+# print()
+#
+# linhas_A, colunas_A = len(A), len(A[0])
+# linhas_B, colunas_B = len(B), len(B[0])
+#
+# C = []
+#
+# for lin in range(linhas_A):
+#     C.append([])
+#
+#     for col in range(colunas_B):
+#         C[lin].append(0)
+#
+#         for k in range(colunas_A):
+#             C[lin][col] += A[lin][k] * B[k][col]
+#
+# for c in C:
+#     print(c)
+#
+# # Exercício 23: Calcular e imprimir B = A²
+# A = []
+#
+# for lin in range(3):
+#     A.append([])
+#
+#     for col in range(3):
+#         a = random.randint(0, 9)
+#         A[lin].append(a)
+#
+# for a in range(3):
+#     print(A[a])
+#
+# print()
+#
+# linhas_A, colunas_A = len(A), len(A[0])
+#
+# B = []
+#
+# for lin in range(linhas_A):
+#     B.append([])
+#
+#     for col in range(colunas_A):
+#         B[lin].append(0)
+#
+#         for k in range(colunas_A):
+#             B[lin][col] += A[lin][k] * A[k][col]
+#
+# for b in B:
+#     print(b)
