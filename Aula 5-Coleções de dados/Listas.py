@@ -276,7 +276,6 @@ print(cores[-9:-1])  # Corre a lista do mesmo jeito que com valores positivos. L
 print(cores[-7::-2])  # Corre a lista do mesmo jeito que com valores positivos.
 print(cores[:-5:-2])  # Mesma coisa aqui.
 
-print("olha aqui, krl")
 print(cores[-1:-8:-2])  # Com passo negativo, início > fim.
 
 """
