@@ -108,3 +108,59 @@ def eh_impar():
 
 
 print(eh_impar())
+
+
+# Escopo - Evitar problemas e confusões:
+
+num = 10  # Variável global.
+total = 0
+
+
+def multiplica():
+    return num * 10
+
+
+print(multiplica())
+
+
+def multiplica():
+    num = 5  # Variável local.
+    return num * 10
+
+
+print(multiplica())  # A variável local tem preferência sobre a global dentro do escopo da função.
+print(num)  # Variável global, no entnato, é a única reconhecida fora do escopo da função.
+
+
+def incrementa():
+    global total  # Pega o valor da variável global. Sem isso, haverá UnboundLocalError por conta do escopo.
+
+    total = total + 1
+    return total
+
+
+print(incrementa())
+print(incrementa())
+print(incrementa())
+print(incrementa())
+print(incrementa())
+
+# Podemos ter funções declaradas dentro de funções.
+
+
+def fora():
+    contador = 0
+
+    def dentro():
+        nonlocal contador  # Acessa o valor de uma função não-local e não-global (em outra função).
+        contador += 1
+        return contador
+
+    return dentro()
+
+
+print(fora())
+print(fora())
+print(fora())
+print(fora())
+print(fora())
