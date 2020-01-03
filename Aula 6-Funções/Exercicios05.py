@@ -1,4 +1,6 @@
+import math
 from random import randint
+from math import factorial, radians
 
 # # Exercício 1: Criar uma função que recebe um número e retorna seu dobro.
 #
@@ -423,20 +425,271 @@ from random import randint
 # print(linhas_exclamacoes(9))
 # print(linhas_exclamacoes(25))
 #
-# Exercício 23: Desenhar um triângulo lateral isóceles de altura 2n - 1 com asteriscos.
-
-
-def desenha_triangulo(n):
-    linhas = ""
-    for l in range(0, n + 1):
-        for e in range(0, l):
-            linhas += '*'
-        linhas += '\n'
-    for l in range(n - 1, 0, -1):
-        for e in range(0, l):
-            linhas += '*'
-        linhas += '\n'
-    return linhas
-
-
-print(desenha_triangulo(6))
+# # Exercício 23: Desenhar um triângulo lateral isóceles de altura 2n - 1 com asteriscos.
+#
+#
+# def desenha_triangulo(n):
+#     linhas = ""
+#     for l in range(1, n + 1):
+#         for e in range(0, l):
+#             linhas += '*'
+#         linhas += '\n'
+#     for l in range(n - 1, 0, -1):
+#         for e in range(0, l):
+#             linhas += '*'
+#         linhas += '\n'
+#     return linhas
+#
+#
+# print(desenha_triangulo(6))
+#
+# # Exercício 24: Desenhar um triângulo isóceles de base 2n - 1.
+#
+#
+# def desenha_triangulo(n):
+#     linhas = ""
+#     for l in range(0, n):
+#         linhas += (" " * (n - l)) + ("*" * ((2 * l) + 1)) + '\n'
+#     return linhas
+#
+#
+# print(desenha_triangulo(6))
+#
+# # Exercício 25: Receber um inteiro N e retornar o resultado da somatória de (N² + 1) / (N + 3)
+#
+#
+# def soma_serie(n):
+#     soma = 0
+#
+#     for c in range(1, n + 1):
+#         soma += ((c ** 2) + 1) / (c + 3)
+#
+#     print((int(soma) * 100) / 100)
+#
+#
+# soma_serie(280)
+#
+# # Exercício 26: Calcular o somatório de 1 até um valor N passado como argumento.
+#
+#
+# def somatorio(n):
+#     soma = 0
+#
+#     for n in range(1, n + 1):
+#         soma += n
+#
+#     print(f"O somatório de 1 até {n} é {soma}.")
+#
+#
+# somatorio(5)
+# somatorio(2)
+# somatorio(4)
+# somatorio(9)
+#
+# # Exercício 27: Fazer uma função que calcule o seno de um ângulo (em radianos) pela sua série de Taylor.
+#
+#
+# def seno_taylor(angulo):
+#     x = angulo * (3.141593 / 180)
+#     seno = 0.0
+#
+#     for n in range(70):
+#         if n % 2 == 0:
+#             seno += (x ** (2 * n + 1)) / math.factorial(2 * n + 1)
+#         else:
+#             seno -= (x ** (2 * n + 1)) / math.factorial(2 * n + 1)
+#
+#     return int(seno * 1000) / 1000
+#
+#
+# print("Seno de 0")
+# print(seno_taylor(0))
+#
+# print("\nSeno de 30")
+# print(seno_taylor(30))
+#
+# print("\nSeno de 45")
+# print(seno_taylor(45))
+#
+# print("\nSeno de 60")
+# print(seno_taylor(60))
+#
+# print("\nSeno de 90")
+# print(seno_taylor(90))
+#
+# print("\nSeno de 120")
+# print(seno_taylor(120))
+#
+# print("\nSeno de 135")
+# print(seno_taylor(135))
+#
+# print("\nSeno de 150")
+# print(seno_taylor(150))
+#
+# print("\nSeno de 180")
+# print(seno_taylor(180))
+#
+# print("\nSeno de 210")
+# print(seno_taylor(210))
+#
+# print("\nSeno de 225")
+# print(seno_taylor(225))
+#
+# print("\nSeno de 240")
+# print(seno_taylor(240))
+#
+# print("\nSeno de 270")
+# print(seno_taylor(270))
+#
+# print("\nSeno de 300")
+# print(seno_taylor(300))
+#
+# print("\nSeno de 315")
+# print(seno_taylor(315))
+#
+# print("\nSeno de 330")
+# print(seno_taylor(330))
+#
+# print("\nSeno de 360")
+# print(seno_taylor(360))
+#
+# # Exercício 28: Fazer uma função que calcule o cosseno de um ângulo (em radianos) pela sua série de Taylor.
+#
+#
+# def cosseno_taylor(angulo):
+#     x = angulo * (3.141593 / 180)
+#     cosseno = 0
+#
+#     for n in range(80):
+#         if n % 2 == 0:
+#             cosseno += (x ** (2 * n)) / math.factorial(2 * n)
+#         else:
+#             cosseno -= (x ** (2 * n)) / math.factorial(2 * n)
+#
+#     return int(cosseno * 1000) / 1000
+#
+#
+# print("Cosseno de 0")
+# print(cosseno_taylor(0))
+#
+# print("\nCosseno de 30")
+# print(cosseno_taylor(30))
+#
+# print("\nCosseno de 45")
+# print(cosseno_taylor(45))
+#
+# print("\nCosseno de 60")
+# print(cosseno_taylor(60))
+#
+# print("\nCosseno de 90")
+# print(cosseno_taylor(90))
+#
+# print("\nCosseno de 120")
+# print(cosseno_taylor(120))
+#
+# print("\nCosseno de 135")
+# print(cosseno_taylor(135))
+#
+# print("\nCosseno de 150")
+# print(cosseno_taylor(150))
+#
+# print("\nCosseno de 180")
+# print(cosseno_taylor(180))
+#
+# print("\nCosseno de 210")
+# print(cosseno_taylor(210))
+#
+# print("\nCosseno de 225")
+# print(cosseno_taylor(225))
+#
+# print("\nCosseno de 240")
+# print(cosseno_taylor(240))
+#
+# print("\nCosseno de 270")
+# print(cosseno_taylor(270))
+#
+# print("\nCosseno de 300")
+# print(cosseno_taylor(300))
+#
+# print("\nCosseno de 315")
+# print(cosseno_taylor(315))
+#
+# print("\nCosseno de 330")
+# print(cosseno_taylor(330))
+#
+# print("\nCosseno de 360")
+# print(cosseno_taylor(360))
+#
+# # Exercício 29: Fazer uma função que calcule o seno hiperbólico de um ângulo (em radianos) pela sua série de Taylor.
+#
+#
+# def seno_hiperbolico_taylor(angulo):
+#     x = angulo * (3.141593 / 180)
+#     seno_hiperbolico = 0
+#
+#     for n in range(70):
+#         seno_hiperbolico += (x ** (2 * n + 1)) / math.factorial(2 * n + 1)
+#
+#     return int(seno_hiperbolico * 1000) / 1000
+#
+#
+# print("Seno hiperbólico de 0:")
+# print(seno_hiperbolico_taylor(0))
+#
+# print("Seno hiperbólico de 30:")
+# print(seno_hiperbolico_taylor(30))
+#
+# print("Seno hiperbólico de 45:")
+# print(seno_hiperbolico_taylor(45))
+#
+# print("Seno hiperbólico de 60:")
+# print(seno_hiperbolico_taylor(60))
+#
+# print("Seno hiperbólico de 90:")
+# print(seno_hiperbolico_taylor(90))
+#
+# # Exercício 30: Fazer uma função que calcule o cosseno hiperbólico de um ângulo (em radianos) pela sua série de Taylor.
+#
+#
+# def cosseno_hiperbolico_taylor(angulo):
+#     x = angulo * (3.141593 / 180)
+#     cosseno_hiperbolico = 0
+#
+#     for n in range(70):
+#         cosseno_hiperbolico += (x ** (2 * n)) / math.factorial(2 * n)
+#
+#     return int(cosseno_hiperbolico * 1000) / 1000
+#
+#
+# print("Cosseno hiperbólico de 0")
+# print(cosseno_hiperbolico_taylor(0))
+#
+# print("Cosseno hiperbólico de 30")
+# print(cosseno_hiperbolico_taylor(30))
+#
+# print("Cosseno hiperbólico de 45")
+# print(cosseno_hiperbolico_taylor(45))
+#
+# print("Cosseno hiperbólico de 60")
+# print(cosseno_hiperbolico_taylor(60))
+#
+# print("Cosseno hiperbólico de 90")
+# print(cosseno_hiperbolico_taylor(90))
+#
+# # Exercício 31: Criar uma função que usa uma série que calula o número neperiano.
+#
+#
+# def calcula_neper(ordem):
+#     e = 0
+#
+#     for i in range(ordem):
+#         e += 1 / math.factorial(i)
+#
+#     return e
+#
+#
+# print(calcula_neper(9))
+# print(calcula_neper(15))
+# print(calcula_neper(100))
+# print(calcula_neper(64))
+# print(calcula_neper(36))
