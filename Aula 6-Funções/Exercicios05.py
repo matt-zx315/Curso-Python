@@ -1,6 +1,6 @@
 import math
-from random import randint
-from math import factorial, radians
+from random import randint, uniform
+from math import factorial, radians, sqrt
 
 # # Exercício 1: Criar uma função que recebe um número e retorna seu dobro.
 #
@@ -211,7 +211,7 @@ from math import factorial, radians
 # # Exercício 12: Receber um número maior que zero e retornar a soma de seus algarismos.
 #
 #
-# def soma_algarismos(numero):
+# def soma_algarismos_fatorial(numero):
 #     if numero > 0:
 #         print(numero)
 #
@@ -225,10 +225,10 @@ from math import factorial, radians
 #     return "Número inválido!"
 #
 #
-# print(soma_algarismos(1789))
-# print(soma_algarismos(0))
-# print(soma_algarismos(-90))
-# print(soma_algarismos(896))
+# print(soma_algarismos_fatorial(1789))
+# print(soma_algarismos_fatorial(0))
+# print(soma_algarismos_fatorial(-90))
+# print(soma_algarismos_fatorial(896))
 #
 # # Exercício 13: Receber dois números e um símbolo de operação matemática básica. Retornar o valor da operação.
 #
@@ -693,3 +693,362 @@ from math import factorial, radians
 # print(calcula_neper(100))
 # print(calcula_neper(64))
 # print(calcula_neper(36))
+#
+# # Exercício 32: Criar uma função que simplifica frações.
+#
+#
+# def simplifica_fracao(numerador, denominador):
+#     anterior = numerador
+#     atual = denominador
+#
+#     resto = anterior % atual
+#
+#     while resto != 0:
+#         anterior = atual
+#         atual = resto
+#         resto = anterior % atual
+#
+#     print(atual)
+#
+#     return f"{numerador}/{denominador} = {numerador/atual}/{denominador/atual}"
+#
+#
+# print(simplifica_fracao(36, 60))
+# print(simplifica_fracao(108, 105))
+# print(simplifica_fracao(64, 80))
+# print(simplifica_fracao(25, 130))
+#
+# # Exercício 33: Receber um número N e calcular a soma dos algarismos de N!.
+#
+#
+# def soma_algarismos_fatorial(numero):
+#     fat = math.factorial(numero)
+#     fat = str(fat)
+#     soma = 0
+#
+#     for algarismo in fat:
+#         soma += int(algarismo)
+#
+#     return soma
+#
+#
+# num = randint(0, 10)
+# print(f"A soma dos algarismos de {num}! é {soma_algarismos_fatorial(num)}.")
+# num = randint(0, 10)
+# print(f"A soma dos algarismos de {num}! é {soma_algarismos_fatorial(num)}.")
+# num = randint(0, 10)
+# print(f"A soma dos algarismos de {num}! é {soma_algarismos_fatorial(num)}.")
+# num = randint(0, 10)
+# print(f"A soma dos algarismos de {num}! é {soma_algarismos_fatorial(num)}.")
+#
+# # Exercício 34: Fazer uma função não-recursiva que recebe um número ímpar positivo N e retorna o fatorial duplo de N.
+#
+#
+# def fatorial_duplo(numero):
+#     if numero % 2 == 1 and numero > 0:
+#         fat = 1
+#
+#         for n in range(numero):
+#             if n % 2 == 1:
+#                 fat *= n
+#
+#         return fat
+#     elif numero % 2 == 1:
+#         return f"{numero} não é maior que zero!"
+#     return f"{numero} não é ímpar!"
+#
+#
+# print(fatorial_duplo(5))
+# print(fatorial_duplo(6))
+# print(fatorial_duplo(9))
+# print(fatorial_duplo(-7))
+#
+# # Exercício 35: Retornar o fatorial quádruplo de um número N com uma função não-recursiva.
+#
+#
+# def fatorial_quadruplo(numero):
+#     if numero > 0:
+#         fat = 1
+#
+#         for n in range(1, (2 * numero) + 1):
+#             fat *= n
+#         for n in range(1, numero + 1):
+#             fat /= n
+#
+#         return fat
+#     elif numero == 0:
+#         return 1
+#     return f"{numero} não é maior que zero."
+#
+#
+# print(fatorial_quadruplo(4))
+# print(fatorial_quadruplo(0))
+# print(fatorial_quadruplo(-8))
+#
+# # Exercício 36: Receber um número e retornar seu superfatorial.
+#
+#
+# def superfatorial(numero):
+#     if numero > 0:
+#         sfat = 1
+#
+#         for sf in range(1, numero + 1):
+#             for f in range(1, sf + 1):
+#                 sfat *= f
+#         return sfat
+#     elif numero == 0:
+#         return 1
+#     return f"{numero} é menor que zero!"
+#
+#
+# print(superfatorial(4))
+# print(superfatorial(0))
+# print(superfatorial(-1))
+#
+# # Exercício 37: Receber um número e retornar seu hiperfatorial.
+#
+#
+# def hiperfatorial(numero):
+#     if numero > 0:
+#         hfat = 1
+#
+#         for hf in range(1, numero + 1):
+#             hfat *= (hf ** hf)
+#
+#         return hfat
+#     elif numero == 0:
+#         return 1
+#     return f"{numero} é menor que zero."
+#
+#
+# print(hiperfatorial(3))
+# print(hiperfatorial(1))
+# print(hiperfatorial(-8))
+#
+# # Exercício 38: Receber um número e retornar seu fatorial exponencial.
+# #
+# #
+# # def fatorial_exponencial(numero):
+# #     if numero > 0:
+# #         fat_exp = 2
+# #
+# #         for fe in range(3, numero + 1):
+# #             fat_exp = fe ** fat_exp
+# #
+# #         return fat_exp
+# #     elif numero == 0:
+# #         return 1
+# #     return f"{numero} é menor que zero."
+# #
+# #
+# # print(fatorial_exponencial(4))
+# # print(fatorial_exponencial(0))
+# # print(fatorial_exponencial(-5))
+#
+# # Exercício 39: Receber dois valores A e B e trocá-los.
+#
+#
+# def troca(a, b):
+#     aux = a
+#     a = b
+#     b = aux
+#
+#     return a, b
+#
+#
+# print(troca(6, 8))
+# print(troca(True, "Nepu"))
+# print(troca(16.5, 'F'))
+#
+# # Exercício 40: Receber um vetor de inteiros e contar quantos valores pares existem nesse vetor.
+#
+#
+# def conta_pares(vetor):
+#     if type(vetor).__name__ != "list":
+#         return "Variável inserida não é um vetor!"
+#     elif len(vetor) == 0:
+#         return "Lista vazia (igual à tua cabeça!)"
+#
+#     cont = 0
+#
+#     for v in vetor:
+#         if type(v).__name__ == "int" and v % 2 == 0:
+#             cont += 1
+#
+#     return cont
+#
+#
+# vetor = [0, True, 2, "Nepu", 3, 8, 9, 6]
+# print(f"No vetor {vetor} há {conta_pares(vetor)} números pares.")
+#
+# # Exercício 41: Receber um vetor de inteiros e retornar o maior valor.
+#
+#
+# def retorna_maior(vetor):
+#     if len(vetor) == 0:
+#         return "Vetor vazio."
+#
+#     maior_valor = vetor [0]
+#
+#     for i in range(0, len(vetor) - 1):
+#         if vetor[i] > maior_valor:
+#             maior_valor = vetor[i]
+#
+#     return maior_valor
+#
+#
+# vetor = []
+#
+# while len(vetor) < 20:
+#     num = randint(0, 1000)
+#     vetor.append(num)
+#
+# print(f"O maior valor do vetor:\n{vetor}\né {retorna_maior(vetor)}.")
+#
+# # Exercício 42: Receber um vetor de números reais e retornar sua média.
+#
+#
+# def media_vetor(vet):
+#     if len(vet) > 0:
+#         media = sum(vet) / len(vet)
+#         return media
+#     return "Vetor vazio!"
+#
+#
+# vetor = []
+#
+# for i in range(0, 10):
+#     num = int(uniform(0.0, 100.0) * 100) / 100
+#     vetor.append(num)
+#
+# print(f"A média do vetor:\n{vetor}\né {media_vetor(vetor)}.")
+#
+# # Exercício 43: Receber um vetor de inteiros e preencher sem repetição.
+#
+#
+# def preenche_vetor_srep(vet):
+#     for v in range(0, 10):
+#         num = randint(0, 100)
+#
+#         if num not in vet:
+#             vet.append(num)
+#
+#     return vet
+#
+#
+# vetor = []
+# vetor = preenche_vetor_srep(vetor)
+#
+# print(vetor)
+#
+# # Exercício 44: Receber um vetor de 30 elementos e retornar os vetores A e B, contendo os valores pares e ímpares.
+#
+#
+# def retorna_vetores(vet):
+#     A, B = [], []
+#
+#     for v in vet:
+#         if v % 2 == 0:
+#             A.append(v)
+#         else:
+#             B.append(v)
+#
+#     return A, B
+#
+#
+# vetor = []
+#
+# for i in range(0, 30):
+#     num = randint(0, 300)
+#     vetor.append(num)
+#
+# vetores = retorna_vetores(vetor)
+# print(f"O vetor\n{vetor}\ntem como valores pares:\n{vetores[0]}\ne como valores ímpares:\n{vetores[1]}.")
+#
+# # Exercício 45: Receber um vetor e calcular o desvio padrão
+#
+#
+# def desvio_padrao(vet):
+#     media = sum(vet) / len(vet)
+#     variancia = 0
+#
+#     for valor in vet:
+#         variancia += (valor - media) ** 2
+#
+#     desvio = sqrt(variancia / (len(vet) - 1))
+#
+#     return int(desvio * 1000) / 1000
+#
+#
+# vetor = []
+#
+# for i in range(50):
+#     num = int(uniform(0.0, 100.0) * 100) / 100
+#     vetor.append(num)
+#
+# print(vetor)
+# print(desvio_padrao(vetor))
+#
+# # Exercício 46: Criar funções que recebem um vetor.
+# vetor = []
+#
+# for i in range(10):
+#     num = randint(0, 100)
+#     vetor.append(num)
+#
+#
+# # Item a: Imprimir o vetor.
+#
+#
+# def imprime_vetor(vet):
+#     print(vet)
+#
+#
+# imprime_vetor(vetor)
+#
+# # Item B: Imprimir o vetor ao contrário.
+#
+#
+# def imprime_inverso(vet):
+#     print(vet[::-1])
+#
+#
+# imprime_inverso(vetor)
+#
+# # Item C: Retornar a média aritimética dos valores.
+#
+#
+# def media_aritimetica(vet):
+#     return sum(vetor) / len(vetor)
+#
+#
+# print(media_aritimetica(vetor))
+#
+# # Exercício 47: Receber uma matriz 4 x 4 e contar quantos valores são maiores que 10.
+# matriz = []
+#
+# for i in range(0, 4):
+#     matriz.append([])
+#
+#     for j in range(0, 4):
+#         num = randint(0, 20)
+#         matriz[i].append(num)
+#
+# for vetor in matriz:
+#     print(vetor)
+#
+#
+# def maior_q10(mat):
+#     cont = 0
+#
+#     for vet in mat:
+#         for numero in vet:
+#             if numero > 10:
+#                 cont += 1
+#
+#     return cont
+#
+#
+# print(f"Há, na matriz, {maior_q10(matriz)} valores maiores que 10.")
+#
+# Exercício 48:
