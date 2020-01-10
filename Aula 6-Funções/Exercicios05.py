@@ -1051,4 +1051,359 @@ from math import factorial, radians, sqrt
 #
 # print(f"Há, na matriz, {maior_q10(matriz)} valores maiores que 10.")
 #
-# Exercício 48:
+# # Exercício 48: Receber uma matriz 3 x 3 e retornar a soma dos elementos acima da diagonal principal.
+#
+#
+# def soma_acima_dp(mat):
+#     soma = 0
+#
+#     for lin in range(len(mat)):
+#         for col in range(len(mat[lin])):
+#             if col > lin:
+#                 soma += mat[lin][col]
+#
+#     return soma
+#
+#
+# matriz = []
+#
+# for i in range(3):
+#     matriz.append([])
+#
+#     for j in range(3):
+#         num = randint(0, 30)
+#         matriz[i].append(num)
+#
+#     print(matriz[i])
+#
+# print(soma_acima_dp(matriz))
+#
+# # Exercício 49: Receber uma matriz 3 x 3 e retornar a soma dos elementos abaixo da diagonal principal.
+#
+#
+# def soma_abaixo_dp(mat):
+#     soma = 0
+#
+#     for lin in range(len(mat)):
+#         for col in range(len(mat[lin])):
+#             if col < lin:
+#                 soma += mat[lin][col]
+#
+#     return soma
+#
+#
+# matriz = []
+#
+# for i in range(3):
+#     matriz.append([])
+#
+#     for j in range(3):
+#         num = randint(0, 30)
+#         matriz[i].append(num)
+#
+#     print(matriz[i])
+#
+#
+# print(soma_abaixo_dp(matriz))
+#
+# # Exercício 50: Receber uma matriz 3 x 3 e retornar a soma dos elementos da diagonal principal.
+#
+#
+# def soma_diagonal_principal(mat):
+#     soma = 0
+#
+#     for k in range(len(mat)):
+#         soma += mat[k][k]
+#
+#     return soma
+#
+#
+# matriz = []
+#
+# for i in range(3):
+#     matriz.append([])
+#
+#     for j in range(3):
+#         num = randint(0, 30)
+#         matriz[i].append(num)
+#
+#     print(matriz[i])
+#
+# print(soma_diagonal_principal(matriz))
+#
+# # Exercício 51: Receber uma matriz 3 x 3 e retornar a soma dos elementos da diagonal secundária.
+#
+#
+# def soma_diagonal_secundaria(mat):
+#     soma = 0
+#
+#     for lin in range(len(mat)):
+#         for col in range(len(mat)):
+#             if lin + col == len(mat) - 1:
+#                 soma += mat[lin][col]
+#
+#     return soma
+#
+#
+# matriz = []
+#
+# for i in range(3):
+#     matriz.append([])
+#
+#     for j in range(3):
+#         num = randint(0, 30)
+#         matriz[i].append(num)
+#
+#     print(matriz[i])
+#
+#
+# print(soma_diagonal_secundaria(matriz))
+#
+# # Exercício 52: Receber uma matriz quadrada de ordem N e retornar sua transposta.
+#
+#
+# def calcula_transposta(mat):
+#     transposta = mat.copy()
+#
+#     for lin in range(len(mat)):
+#         for col in range(len(mat)):
+#             if col > lin:
+#                 aux = mat[col][lin]
+#                 mat[col][lin] = mat[lin][col]
+#                 mat[lin][col] = aux
+#
+#     return transposta
+#
+#
+# matriz = []
+#
+# for i in range(4):
+#     matriz.append([])
+#
+#     for j in range(4):
+#         num = randint(0, 30)
+#         matriz[i].append(num)
+#
+#     print(matriz[i])
+#
+# t = calcula_transposta(matriz)
+# print()
+#
+# for l in t:
+#     print(l)
+#
+# # Exercício 53: Verificar se uma matriz quadrada de ordem N é a matriz identidade.
+#
+#
+# def e_identidade(mat):
+#     identidade = True
+#
+#     for lin in range(len(mat)):
+#         for col in range(len(mat)):
+#             if lin == col:
+#                 if mat[lin][col] != 1:
+#                     identidade = False
+#             elif mat[lin][col] != 0:
+#                 identidade = False
+#
+#     if identidade:
+#         return "É matriz identidade."
+#     return "Não é matriz identidade."
+#
+#
+# matriz = []
+#
+# for i in range(3):
+#     matriz.append([])
+#
+#     for j in range(3):
+#         num = randint(0, 30)
+#         matriz[i].append(num)
+#
+#     print(matriz[i])
+#
+# matriz2 = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+#
+# print(e_identidade(matriz))
+# print(e_identidade(matriz2))
+#
+# # Exercício 54: Receber uma matriz 4 x 4 e retornar a soma de seus elementos.
+#
+#
+# def soma_elementos(mat):
+#     soma = 0
+#
+#     for lin in range(len(mat)):
+#         for col in range(len(mat)):
+#             soma += mat[lin][col]
+#
+#     return soma
+#
+#
+# matriz = []
+#
+# for i in range(4):
+#     matriz.append([])
+#
+#     for j in range(4):
+#         num = randint(0, 30)
+#         matriz[i].append(num)
+#
+#     print(matriz[i])
+#
+# print(soma_elementos(matriz))
+#
+# # Exercício 55: Receber uma matriz 3 x 3 e retornar a soma de suas diagonais.
+#
+#
+# def soma_diagonais(mat):
+#     soma = 0
+#
+#     for lin in range(len(mat)):
+#         for col in range(len(mat[lin])):
+#             if lin == col or lin + col == len(mat) - 1:
+#                 soma += mat[lin][col]
+#
+#     return soma
+#
+#
+# matriz = []
+#
+# for i in range(3):
+#     matriz.append([])
+#
+#     for j in range(3):
+#         num = randint(0, 30)
+#         matriz[i].append(num)
+#
+#     print(matriz[i])
+#
+# print(soma_diagonais(matriz))
+#
+# # Exercício 56: Receber uma matriz 7 x 6 e um número N representando uma linha.
+#
+#
+# def soma_linha(mat, lin):
+#     soma = 0
+#
+#     if 0 <= lin < len(mat):
+#         for col in range(len(mat[lin])):
+#             soma += mat[lin][col]
+#
+#         return soma
+#     return "Linha inexistente!"
+#
+#
+# matriz = []
+#
+# for i in range(7):
+#     matriz.append([])
+#
+#     for j in range(6):
+#         num = randint(0, 30)
+#         matriz[i].append(num)
+#
+#     print(matriz[i])
+#
+# print(soma_linha(matriz, 4))
+# print(soma_linha(matriz, 1))
+# print(soma_linha(matriz, 9))
+# print(soma_linha(matriz, -6))
+#
+# # Exercício 57: Receber uma matriz 7 x 6 e um número N representando uma coluna.
+#
+#
+# def soma_coluna(mat, col):
+#     soma = 0
+#
+#     if 0 <= col < len(mat[0]):
+#         for lin in range(len(mat)):
+#             soma += mat[lin][col]
+#
+#         return soma
+#     return "Coluna inexistente!"
+#
+#
+# matriz = []
+#
+# for i in range(7):
+#     matriz.append([])
+#
+#     for j in range(6):
+#         num = randint(0, 30)
+#         matriz[i].append(num)
+#
+#     print(matriz[i])
+#
+#
+# print(soma_coluna(matriz, 5))
+# print(soma_coluna(matriz, 0))
+# print(soma_coluna(matriz, -2))
+# print(soma_coluna(matriz, 8))
+#
+# # Exercício 58: Receber 2 matrizes A e B e retornar a matriz C, sendo essa o produto de A e B.
+#
+#
+# def produto_matricial(a, b):
+#     C = []
+#
+#     if len(a[0]) == len(b):
+#         for lin in range(len(a)):
+#             C.append([])
+#
+#             for col in range(len(b[0])):
+#                 C[lin].append(0)
+#
+#                 for k in range(len(a[0])):
+#                     C[lin][col] += a[lin][k] * b[k][col]
+#
+#         return C
+#     return "Impossível realizar multiplicação de A e B."
+#
+#
+# matrizA = []
+# matrizB = []
+#
+# for i in range(3):
+#     matrizA.append([])
+#     matrizB.append([])
+#
+#     for j in range(3):
+#         num = randint(0, 9)
+#         matrizA[i].append(num)
+#         num = randint(0, 9)
+#         matrizB[i].append(num)
+#
+#
+# for l in matrizA:
+#     print(l)
+#
+# print()
+#
+# for l in matrizB:
+#     print(l)
+#
+# print()
+#
+# for l in produto_matricial(matrizA, matrizB):
+#     print(l)
+#
+# # Exercício 59: Receber 2 vetores de tamanho 10 e retornar o vetor união desses vetores.
+#
+#
+# def vetor_uniao(a, b):
+#     return a + b
+#
+#
+# A, B = [], []
+#
+# for i in range(10):
+#     num = randint(0, 50)
+#     A.append(num)
+#     num = randint(0, 50)
+#     B.append(num)
+#
+# print(A)
+# print(B)
+# print(vetor_uniao(A, B))
+#
