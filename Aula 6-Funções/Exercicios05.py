@@ -1407,3 +1407,287 @@ from math import factorial, radians, sqrt
 # print(B)
 # print(vetor_uniao(A, B))
 #
+# # Exercício 60: Retornar a primeira posição de uma substring dentro de uma string ou -1 caso aquela não exista.
+#
+#
+# def substring(string, start=None, stop=None):
+#     if start > len(string):
+#         return -1
+#     return f"Substring: {string[start:stop]}, primeira posição: {string[start:stop][0]}."
+#
+#
+# st = "Isso não faz o menor sentido."
+#
+# print(substring(st, 19, 23))
+#
+# # Exercício 61: Comaparar e reotrnar verdadeiro se uma string for um anagrama de uma palavra.
+#
+#
+# def compara_palavra(original, palavra):
+#     if len(palavra) == len(original):
+#         comparacoes = 0
+#
+#         for letra1 in palavra:
+#             for letra2 in original:
+#                 if letra1.lower() == letra2.lower():
+#                     comparacoes += 1
+#
+#         if comparacoes == len(original):
+#             return True
+#         return False
+#     return False
+#
+#
+# o = "Alice"
+# p = "Celia"
+#
+# print(compara_palavra(o, p))
+#
+# # Exercício 62: Calcular o tamanho de uma string numa função com a assinatura void tamanho(char *str, int *strsize)
+#
+#
+# def tamanho(string):
+#     print(f"\"{string}\" tem {len(string)} letras.")
+#
+#
+# st = "Sai da frente, Satanás!!!"
+#
+# tamanho(st)
+#
+# # Exercício 63: Retornar se duas strings são iguais ou diferentes.
+#
+#
+# def compara_strings(st1, st2):
+#     if len(st1) == len(st2):
+#         for letra in range(len(st1)):
+#             if st1[letra].lower() != st2[letra].lower():
+#                 return f"{st1} e {st2} não são iguais."
+#         return f"{st1} e {st2} são iguais."
+#     return f"{st1} e {st2} não são iguais."
+#
+#
+# palavra1 = "Réptil"
+# palavra2 = "Reptil"
+#
+# print(compara_strings(palavra1, palavra2))
+#
+# # Exercício 64: Receber duas strings, str1 e str2, e concatenar str2 a str1.
+#
+#
+# def concatena_strings(str1, str2):
+#     str1 += str2
+#     return str1
+#
+#
+# s1, s2 = "Gato ", "comeu!"
+#
+# print(concatena_strings(s1, s2))
+#
+# # Exercício 65: Receber 2 strings, str1 e str2 e um inteiro N. Concatenar os N primeiros caracteres de str2 a str1.
+#
+#
+# def concatena_n(str1, str2, n):
+#     str1 += str2[:n]
+#     return str1
+#
+#
+# s1, s2 = "Eu não faço ", "a menor ideia do que estou fazendo."
+#
+# print(concatena_n(s1, s2, 13))
+#
+# # Exercício 66: Retornar um caractere recebido em maíusculo.
+#
+#
+# def caractere_maiusculo(string):
+#     return string.upper()
+#
+#
+# st = "a"
+# print(caractere_maiusculo(st))
+#
+# # Exercício 67: Receber um vetor e seu tamanho. Inserir caracteres no vetor até que atinja o tamanho ou presionar enter.
+#
+#
+# def getchar():
+#     char = input()
+#     return char
+#
+#
+# def preenche_vetor_char(_vetor, _tamanho):
+#     while len(_vetor) < _tamanho:
+#         char = getchar()
+#         if char != "":
+#             _vetor.append(char)
+#         else:
+#             break
+#     return _vetor
+#
+#
+# v = preenche_vetor_char([], 5)
+#
+# print(v)
+#
+# # Exercício 68: Receber duas strings e intercalá-las letra a letra na primeira string.
+#
+#
+# def intercala_strings(_str1, _str2):
+#     aux = ""
+#     if _str1 < _str2:
+#         for i in range(len(_str1)):
+#             aux += _str1[i]
+#             aux += _str2[i]
+#     else:
+#         for i in range(len(_str2)):
+#             aux += _str1[i]
+#             aux += _str2[i]
+#
+#     _str1 = aux
+#     return _str1
+#
+#
+# s1, s2 = "Criança insuportável!", "Para de chorar, desgraça!!!"
+#
+# print(intercala_strings(s1, s2))
+#
+# # Exercício 69: Criar funções que realizem operações com frações.
+#
+# # item a: Criar e ler duas frações, P e Q, com numerador e denominador:
+#
+#
+# def le_fracao(numerador, denominador):
+#     return numerador, denominador
+#
+#
+# P = le_fracao(4, 14)
+# Q = le_fracao(9, 15)
+#
+# print(P, Q)
+#
+# # item b: encontrar o MDC entre numerador e denominador para simplificar as frações.
+#
+#
+# def simplifica_fracao(fracao):
+#     numerador = fracao[0]
+#     denominador = fracao[1]
+#
+#     anterior = numerador
+#     atual = denominador
+#
+#     resto = anterior % atual
+#
+#     while resto != 0:
+#         anterior = atual
+#         atual = resto
+#         resto = anterior % atual
+#
+#     return numerador/atual, denominador/atual
+#
+#
+# P = simplifica_fracao(P)
+# Q = simplifica_fracao(Q)
+#
+# print(P, Q)
+#
+# # item c: criar uma função para cada operação básica entre frações (soma, diferença, produto e razão):
+#
+#
+# def numero_primo(_numero):
+#     _divisores = 0
+#
+#     for c in range(1, _numero + 1):
+#         if _numero % c == 0:
+#             _divisores += 1
+#
+#     if _divisores == 2:
+#         return True
+#     return False
+#
+#
+# def calcula_mmc(_n1, _n2):
+#     _mmc = 1
+#     _num = 2
+#     _multiplica = True  # Evita multiplicações adicionais, as quais resultariam em um valor de MMC errado.
+#
+#     while _n1 != 1 or _n2 != 1:
+#
+#         if numero_primo(_num):  # Realiza as divisões apaenas com números primos.
+#             if _n1 % _num == 0:
+#                 _n1 /= _num
+#                 _mmc *= _num
+#                 _multiplica = False
+#
+#             elif _n2 % _num == 0:
+#                 _n2 /= _num
+#
+#                 if _multiplica:  # Só haverá multiplicação por _num se _n1 não tiver sofrido divisão.
+#                     _mmc *= _num
+#             else:
+#                 _multiplica = True
+#                 _num += 1
+#         else:
+#             _num += 1
+#     return _mmc
+#
+#
+# def soma_fracoes(_fracao1, _fracao2):
+#     _num1 = _fracao1[0]
+#     _num2 = _fracao2[0]
+#     _den1 = _fracao1[1]
+#     _den2 = _fracao2[1]
+#
+#     _num3, _den3 = 1, 1
+#
+#     if _den1 != _den2:
+#         _den3 = calcula_mmc(_den1, _den2)
+#         _num3 = _num1 * (_den3 / _den1) + _num2 * (_den3 / _den2)
+#     else:
+#         _den3 = _den1
+#         _num3 = _num1 + _num2
+#     return int(_num3), _den3
+#
+#
+# def subtrai_fracoes(_fracao1, _fracao2):
+#     _num1 = _fracao1[0]
+#     _num2 = _fracao2[0]
+#     _den1 = _fracao1[1]
+#     _den2 = _fracao2[1]
+#
+#     _num3, _den3 = 1, 1
+#
+#     if _den1 != _den2:
+#         _den3 = calcula_mmc(_den1, _den2)
+#         _num3 = _num1 * (_den3 / _den1) - _num2 * (_den3 / _den2)
+#     else:
+#         _den3 = _den1
+#         _num3 = _num1 - _num2
+#     return int(_num3), _den3
+#
+#
+# def multiplica_fracoes(_fracao1, _fracao2):
+#     _num1 = _fracao1[0]
+#     _num2 = _fracao2[0]
+#     _den1 = _fracao1[1]
+#     _den2 = _fracao2[1]
+#
+#     _num3 = _num1 * _num2
+#     _den3 = _den1 * _den2
+#
+#     return _num3, _den3
+#
+#
+# def divide_fracoes(_fracao1, _fracao2):
+#     _num1 = _fracao1[0]
+#     _num2 = _fracao2[0]
+#     _den1 = _fracao1[1]
+#     _den2 = _fracao2[1]
+#
+#     _num3 = _num1 * _den2
+#     _den3 = _num2 * _den1
+#
+#     return _num3, _den3
+#
+#
+# print(soma_fracoes(P, Q))
+# print(subtrai_fracoes(P, Q))
+# print(multiplica_fracoes(P, Q))
+# print(divide_fracoes(P, Q))
