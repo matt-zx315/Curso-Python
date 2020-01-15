@@ -26,7 +26,7 @@ def exibe_data(dia, mes, ano):
         elif mes == 2:
             if dia <= 28 and ano % 4 != 0:
                 mes = "Fevereiro"
-            elif dia == 29 and (ano % 4 == 0 and ano % 100 != 0) or (ano % 100 == 0 and ano % 400 == 0):
+            elif dia == 29 and ((ano % 4 == 0 and ano % 100 != 0) or (ano % 100 == 0 and ano % 400 == 0)):
                 mes = "Fevereiro"
             else:
                 return "Dia inválido!"
