@@ -19,7 +19,7 @@ print(all(nome[0] == "C" for nome in nomes))  # Verifica se todos os nomes come�
 
 nomes = ["Carlos", "Camila", "Carla", "Cassiano", "Cristina", "Aloízio"]
 
-print(all(nome[0] == "C" for nome in nomes))
+print(all([nome[0] == "C" for nome in nomes]))
 
 # OBS.: Esse é um caso que sempre retorna True, já que o resultado que a função all() receberá
 # sempre será um iterável com uma string ou vazio.
