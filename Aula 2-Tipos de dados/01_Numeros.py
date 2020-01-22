@@ -106,7 +106,7 @@ print(valor2)
 print(valor3)
 print(valor4)
 
-# Por meio de casting, explicado em Inputs.py, podemos converter float pra int, porém a parte decimal é perdida.
+# Por meio de casting, explicado em 06_Inputs.py, podemos converter float pra int, porém a parte decimal é perdida.
 valor = 1.65
 resultado = int(valor)
 print(resultado)
