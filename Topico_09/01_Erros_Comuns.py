@@ -22,7 +22,7 @@ Já no terminal, o nome do arquivo é exibdo, mas não o seu caminho.
 def funcao:
     print("Tá errado!")
 
-  File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 27
+  File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 27
     def funcao:
               ^
 SyntaxError: invalid syntax
@@ -31,7 +31,7 @@ Regra de sintaxe não respeitada.
 ------------------------------------------------------------------------------------------------------------------------
 None = 1
 
-File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 40
+File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 40
     None = 1
     ^
 SyntaxError: can't assign to keyword
@@ -40,7 +40,7 @@ Atribuíção de valor a uma palavra reservada.
 ------------------------------------------------------------------------------------------------------------------------
 return
 
-File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 51
+File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 51
     return
     ^
 SyntaxError: 'return' outside function
@@ -56,7 +56,7 @@ return foi usada fora de uma função.
 printf("Nepu")  # Erro de quem veio de C pra Python (NameError)
 
 Traceback (most recent call last):
-  File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 7, in <module>
+  File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 7, in <module>
     printf("Nepu")  # Erro de quem veio de C pra Python (NameError)
 NameError: name 'printf' is not defined
 
@@ -65,7 +65,7 @@ printf não é uma função definida no código.
 print(num)
 
 Traceback (most recent call last):
-  File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 66, in <module>
+  File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 66, in <module>
     print(num)
 NameError: name 'num' is not defined
 
@@ -80,7 +80,7 @@ Variável num não declarada.
 len(5)
 
 Traceback (most recent call last):
-  File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 115, in <module>
+  File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 115, in <module>
     len(5)
 TypeError: object of type 'int' has no len()
 
@@ -89,7 +89,7 @@ Não existe len de inteiro.
 print("Nepu" + [])
 
 Traceback (most recent call last):
-  File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 121, in <module>
+  File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 121, in <module>
     print("Nepu" + [])
 TypeError: can only concatenate str (not "list") to str
 
@@ -105,7 +105,7 @@ lista = [6]
 print(lista[1])
 
 Traceback (most recent call last):
-  File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 83, in <module>
+  File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 83, in <module>
     print(lista[1])
 IndexError: list index out of range
 
@@ -115,7 +115,7 @@ lista = "Nepu"
 print(lista[0][5])
 
 Traceback (most recent call last):
-  File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 95, in <module>
+  File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 95, in <module>
     print(lista[0][5])
 IndexError: string index out of range
 
@@ -130,7 +130,7 @@ Tentativa de acesso a um índice inexistente da string.
 print(int('Errou!'))
 
 Traceback (most recent call last):
-  File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 133, in <module>
+  File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 133, in <module>
     print(int('Errou!'))
 ValueError: invalid literal for int() with base 10: 'Errou!'
 
@@ -147,7 +147,7 @@ dicionario = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i
 print(dicionario['j'])
 
 Traceback (most recent call last):
-  File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 150, in <module>
+  File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 150, in <module>
     print(dicionario['j'])
 KeyError: 'j'
 
@@ -165,7 +165,7 @@ tupla = (1, 2, 3)
 tupla.sort()
 
 Traceback (most recent call last):
-  File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 168, in <module>
+  File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 168, in <module>
     tupla.sort()
 AttributeError: 'tuple' object has no attribute 'sort'
 
@@ -180,7 +180,7 @@ Tuplas não possuem o método sort().
 def nova():
 print("Nepu")
 
-  File "C:/Documents/Curso Python/Aula 9-Debugando e Tratando Erros/01_Erros_Comuns.py", line 184
+  File "C:/Documents/Curso Python/Topico_09/01_Erros_Comuns.py", line 184
     print("Nepu")
         ^
 IndentationError: expected an indented block

@@ -1162,17 +1162,14 @@ print(soma_diagonal_secundaria(matriz))
 # Exercício 52: Receber uma matriz quadrada de ordem N e retornar sua transposta.
 
 
-def calcula_transposta(mat):
-    transposta = mat.copy()
+def calcula_transposta(_matriz):
+    _transposta = []
 
-    for lin in range(len(mat)):
-        for col in range(len(mat)):
-            if col > lin:
-                aux = mat[col][lin]
-                mat[col][lin] = mat[lin][col]
-                mat[lin][col] = aux
+    for lin in range(len(_matriz[0])):
+        _transposta.append([])
 
-    return transposta
+        for col in range(len(_matriz)):
+            _transposta[lin].append(_matriz[col][lin])
 
 
 matriz = []
