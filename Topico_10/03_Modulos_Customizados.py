@@ -1,9 +1,14 @@
 """
-Um módulo Python é todo arquivo com a extensão .py
+Todo arquivo com a extensão .py é um módulo Python.
 Isso significa que qualquer arquivo Python pode ser considerado um módulo.
+Portanto, a sintaxe é a mesma.
+
+É importante lembrar que, caso seu projeto possua diversas pastas (diretórios),
+para acessar os módulos num mesma passa, é necessário digitar o caminho a partir
+da raíz do projeto.
 """
 
-from Topico_10.matrizes import *  # Diretório.módulo (Utilizar apenas letras e números, separados por underline)
+from Topico_10.matrizes import *
 
 matriz = gera_matriz(4, 3, 0, 9)
 nova = calcula_transposta(matriz)

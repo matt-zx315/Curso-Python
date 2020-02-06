@@ -1,3 +1,9 @@
+"""
+Em um módulo Python, não se deve deixar prints soltos.
+Para isso, é feita uma verificação, que permite que os prints executem APENAS
+se o módulo em execução for o principal (__main__)
+"""
+
 from random import randint
 
 
@@ -28,3 +34,15 @@ def calcula_transposta(_matriz):
 def imprime_matriz(_matriz):
     for linha in _matriz:
         print(linha)
+
+
+if __name__ == "__main__":
+    matriz = gera_matriz()
+    nova = calcula_transposta(matriz)
+
+    imprime_matriz(matriz)
+    imprime_matriz(nova)
+
+    print("matrizes.py está sendo executadoi diretamente.")
+else:
+    print(f"matrizes.py foi importado com o nome {__name__}.")
