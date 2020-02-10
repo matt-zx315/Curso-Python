@@ -14,7 +14,16 @@ toda vez que o programa executar, o arquivo original será sobrescrito,
 ou seja, o conteúdo anterior será apagado e substituído pelo novo.
 """
 
-with open("novo.txt", 'w') as arquivo:  # O argumento 'w' significa escrita. É o modo de abertura do arquivo.
-    arquivo.write("Escrevendo uma linha no arquivo.\n")
-    arquivo.write("Outra linha\n")
-    arquivo.write("Assim que se escrevem múltiplas linhas.")
+# with open("novo.txt", 'w') as arquivo:  # O argumento 'w' significa escrita. É o modo de abertura do arquivo.
+#     arquivo.write("Escrevendo uma linha no arquivo.\n")
+#     arquivo.write("Outra linha\n")
+#     arquivo.write("Assim que se escrevem múltiplas linhas.")
+
+with open("frutas.txt", 'w') as frutas:
+    while True:
+        fruta = input("Informe uma fruta ou digite sair: ").lower()
+
+        if fruta != 'sair':
+            frutas.write(fruta + '\n')
+        else:
+            break
