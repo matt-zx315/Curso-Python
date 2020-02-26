@@ -1,0 +1,7 @@
+Cidade: São Paulo, População: 12106920
+Cidade: Moscou, População: 12380664
+Cidade: Tóquio, População: 9071577
+Cidade: Nova Iorque, População: 8405837
+Cidade: Xangai, População: 17836133
+Cidade: Londres, População: 8308369
+Cidade: Cairo, População: 8922949

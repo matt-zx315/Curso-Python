@@ -1,0 +1,5 @@
+dimensões:
+3 3
+nulos:
+1 0
+1 2

@@ -1,0 +1,5 @@
+Nome: João Nota: 8.0
+Nome: Maria Nota: 7.5
+Nome: Carlos Nota: 6.0
+Nome: Silvia Nota: 9.0
+Nome: Abreu Nota: 10.0
