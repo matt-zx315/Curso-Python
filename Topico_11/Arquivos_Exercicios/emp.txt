@@ -1,0 +1,5 @@
+Funcionário: Maciel dos Santos Abreu de Lima Souza Silva	Programador	6
+Funcionário: Silvia Araújo Pereira	Modeladora	5
+Funcionário: Julio Tavares	Publictário e Gestor	4
+Funcionário: Aline Souza Pires	Sonoplasta e Compositora	4
+Funcionário: Caio de Andrade e Lima Silva	Game Designer	7
