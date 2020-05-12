@@ -23,7 +23,7 @@ print(type(numero))
 nome = 'Nepu'
 
 print(nome)
-print(type(nome))  # Novo tipo de dado de nome 'Produto'.
+print(type(nome))  # Novo tipo de dado de nome 'Produto'.lutadores
 
 
 class Produto:
